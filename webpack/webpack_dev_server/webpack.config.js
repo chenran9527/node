@@ -1,4 +1,6 @@
 'use strict';
+const path = require('path')
+const config = require('./config/')
 //webpack-dev-server 启动服务器
 const webpack = require('webpack');
 
@@ -10,7 +12,7 @@ module.exports = {
   },
   output: {
   	publicPath: '/assets',
-    path: __dirname + '/dist/assets',
+    path: path.resolve(__dirname + config.publicPath),
     filename: '[name].bundle.js',
   },
   devServer: {
